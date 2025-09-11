@@ -10,6 +10,3 @@ geometric = (x * y) ** 0.5
 
 print(arithmetic)
 print(geometric)
-
-
-
