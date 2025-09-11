@@ -1,4 +1,4 @@
-"""Find arithmetic and geometric mean for x and y
+"""Find arithmetic and geometric mean for x and y.
 
 """
 

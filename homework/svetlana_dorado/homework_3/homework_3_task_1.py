@@ -1,4 +1,4 @@
-"""Add, subtract and multiply numbers a and b
+"""Add, subtract and multiply numbers a and b.
 
 """
 

@@ -1,4 +1,4 @@
-"""Find hypotenuse and area for x and y
+"""Find hypotenuse and area for x and y.
 
 """
 
