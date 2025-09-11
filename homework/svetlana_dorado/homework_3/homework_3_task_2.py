@@ -1,5 +1,5 @@
 """Variant with PEMDAS priority (Multiplication, Division, Addition, Subtraction)
-for x − y/1 + x*y.
+for x − y/1 + x*y
 
 """
 
