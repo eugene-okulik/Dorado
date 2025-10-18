@@ -1,7 +1,7 @@
 saved_number = 13
 
 while True:
-    user_input = int(input("Введите цифру: "))
+    user_input = int(input("Введите цифру и выиграйте 1000 000 $: "))
     if user_input == saved_number:
         print("Поздравляю! Вы угадали!")
         break
