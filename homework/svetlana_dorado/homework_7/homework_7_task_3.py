@@ -4,6 +4,7 @@ def operation_result(*args):
         result = number + 10
         print(result)
 
+
 operation_result(
     "результат операции: 42",
     "результат операции: 54",
