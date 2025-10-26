@@ -9,4 +9,5 @@ def your_bonus():
         salary += random.randint(1, 10000)
     return f"'${salary}'"
 
+
 print(your_bonus())
