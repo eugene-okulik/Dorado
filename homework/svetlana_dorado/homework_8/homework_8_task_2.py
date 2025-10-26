@@ -14,6 +14,7 @@ def generator(n):
         result = next(number_generator)
     return result
 
+
 print(f"Number 5 is: {generator(5)}")
 print(f"Number 200 is: {generator(200)}")
 print(f"Number 1000 is: {generator(1000)}")
