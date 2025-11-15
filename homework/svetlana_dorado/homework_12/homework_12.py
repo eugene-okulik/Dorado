@@ -24,33 +24,33 @@ class Flower:
 class Rose(Flower):
     def __init__(self, color="Red", stem_length=30, lifetime=7, price=20):
         super().__init__(
-        name = "Rose",
-        color = color,
-        stem_length = stem_length,
-        lifetime= lifetime,
-        price = price
+        name="Rose",
+        color=color,
+        stem_length=stem_length,
+        lifetime=lifetime,
+        price=price
         )
 
 
 class CallaLily(Flower):
     def __init__(self, color="White", stem_length=60, lifetime=10, price=15):
         super().__init__(
-        name = "Calla Lily",
-        color = color,
-        stem_length = stem_length,
-        lifetime= lifetime,
-        price = price
+        name="Calla Lily",
+        color=color,
+        stem_length=stem_length,
+        lifetime=lifetime,
+        price=price
         )
 
 
 class Tulip(Flower):
     def __init__(self, color="Yellow", stem_length=15, lifetime=5, price=10):
         super().__init__(
-        name = "Tulip",
-        color = color,
-        stem_length = stem_length,
-        lifetime= lifetime,
-        price = price
+        name="Tulip",
+        color=color,
+        stem_length=stem_length,
+        lifetime=lifetime,
+        price=price
         )
 
 
