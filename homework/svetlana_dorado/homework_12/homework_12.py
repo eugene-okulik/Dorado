@@ -8,12 +8,16 @@ class Flower:
 
     def __str__(self):
         return (f"Flower with description: "
-                f"{self.color} {self.name} for the price €{self.price}, {self.lifetime} days of lifespan, "
+                f"{self.color} {self.name} "
+                f"for the price €{self.price}, "
+                f"{self.lifetime} days of lifespan, "
                 f"{self.stem_length} cm of stem length")
 
     def __repr__(self):
         return (f"Flower with description: "
-                f"{self.color} {self.name} for the price €{self.price}, {self.lifetime} days of lifespan, "
+                f"{self.color} {self.name} "
+                f"for the price €{self.price}, "
+                f"{self.lifetime} days of lifespan, "
                 f"{self.stem_length} cm of stem length")
 
 
@@ -55,10 +59,12 @@ class Bouquet:
         self.flowers = []
 
     def __str__(self):
-        return f"Bouquet: {len(self.flowers)} flowers, €{self.total_price()}, {round(self.lifetime())} days"
+        return (f"Bouquet: {len(self.flowers)} flowers, "
+                f"€{self.total_price()}, {round(self.lifetime())} days")
 
     def __repr__(self):
-        return f"Bouquet: {len(self.flowers)} flowers, €{self.total_price()}, {round(self.lifetime())} days"
+        return (f"Bouquet: {len(self.flowers)} flowers, "
+                f"€{self.total_price()}, {round(self.lifetime())} days")
 
     def add_flower(self, flower):
         self.flowers.append(flower)
