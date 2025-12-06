@@ -70,13 +70,19 @@ new_student = cursor.fetchone()
 print(f"Student updated: {new_student}")
 
 # 4. Создать несколько учебных предметов (subjects)
-query = "INSERT INTO subjects (title) VALUES (%s);"
-cursor.execute(query, ("Subject one for Vladislav Winner",))
-subject_one_id = cursor.lastrowid
+subjects_titles = [
+    "Subject one for Vladislav Winner",
+    "Subject two for Vladislav Winner"
+]
+subject_ids = []
 
 query = "INSERT INTO subjects (title) VALUES (%s);"
-cursor.execute(query, ("Subject two for Vladislav Winner",))
-subject_two_id = cursor.lastrowid
+for title in subjects_titles:
+    cursor.execute(query, (title,))
+    subject_ids.append(cursor.lastrowid)
+
+subject_one_id = subject_ids[0]
+subject_two_id = subject_ids[1]
 
 query = '''
 SELECT *
@@ -90,24 +96,27 @@ new_subjects = cursor.fetchall()
 print(f"Subjects created: {new_subjects}")
 
 # 5. Создать по два занятия для каждого предмета (lessons)
-many_query = "INSERT INTO lessons (title, subject_id) VALUES (%s, %s);"
-cursor.executemany(
-    many_query, [
-        ("Lesson one for subject one", subject_one_id),
-        ("Lesson two for subject one", subject_one_id),
-        ("Lesson one for subject two", subject_two_id),
-        ("Lesson two for subject two", subject_two_id)
-    ]
-)
+lessons_data = [
+    ("Lesson one for subject one", subject_one_id),
+    ("Lesson two for subject one", subject_one_id),
+    ("Lesson one for subject two", subject_two_id),
+    ("Lesson two for subject two", subject_two_id)
+]
+lesson_ids = []
+
+query = "INSERT INTO lessons (title, subject_id) VALUES (%s, %s);"
+for title, subject_id in lessons_data:
+    cursor.execute(query, (title, subject_id))
+    lesson_ids.append(cursor.lastrowid)
 
 query = '''
 SELECT *
 FROM lessons
-WHERE subject_id IN (%s, %s)
+WHERE id IN (%s, %s, %s, %s)
 ORDER BY subject_id, id
 '''
 
-cursor.execute(query, (subject_one_id, subject_two_id))
+cursor.execute(query, tuple(lesson_ids))
 new_lessons = cursor.fetchall()
 print(f"Lessons created: {new_lessons}")
 
